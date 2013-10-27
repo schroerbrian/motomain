@@ -79,3 +79,7 @@ input.chosen {
     padding: 3px;
     padding-bottom: 0;
 }
+
+.vehicle.selected {
+    background-color: yellow;
+}

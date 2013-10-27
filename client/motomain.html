@@ -26,9 +26,16 @@
           </div>
         </div>
 
+        {{#if currentUser}}
         <div class="row">
-          {{> vehicleCreation}}
+          {{> vehicle_create}}
         </div>
+        <div class="row">
+          {{> vehicle_list}}
+        </div>
+        {{else}}
+        <h4>Please sign in.</h4>
+        {{/if}}
       </div>
 
       <div class="span1"> </div>
@@ -37,33 +44,11 @@
 </template>
 
 <template name="details">
-</template>
+  {{#if vehicle}}
 
-<template name="vehicleCreation">
-  <div class="span4">
-    <h4>Make:</h4>
-    <select class="selectpicker" id="make_selector">
-      {{#each vehicleMakes}}
-      <option value="{{_id}}">{{name}}</option>
-      {{/each}}
-    </select>
+  {{else}}
+  <div class="span8">
+    <h3>{{name}}</h3>
   </div>
-
-  <div class="span4">
-    <h4>Model:</h4>
-    <select class="selectpicker" id="model_selector">
-      {{#each vehicleModels}}
-      <option value="{{_id}}">{{name}}</option>
-      {{/each}}
-    </select>
-  </div>
-
-  <div class="span4">
-    <h4>Year:</h4>
-    <select class="selectpicker" id="year_selector">
-      {{#each vehicleYears}}
-      <option value="year">{{year}}</option>
-      {{/each}}
-    </select>
-  </div>
+  {{/if}}
 </template>

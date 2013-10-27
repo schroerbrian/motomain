@@ -1,0 +1,22 @@
+<template name="vehicle_list">
+  {{#if vehicles.count}}
+
+  <h4>Your Vehicles</h4>
+
+  {{#each vehicles}}
+  {{> vehicle_list_item}}
+  {{/each}}
+
+  {{else}}
+
+  <p>You have no vehicles</p>
+
+  {{/if}}
+</template>
+
+<template name="vehicle_list_item">
+  <div class="vehicle {{selected}}">
+    <span>{{name}}</span>
+    <span>{{year}}</span>
+  </div>
+</template>
