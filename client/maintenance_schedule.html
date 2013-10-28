@@ -1,0 +1,65 @@
+
+<template name="maintenance_schedule">
+  <div>
+    <h4>{{name}}</h4>
+    <h5>{{model.name}} {{years}}</h5>
+  </div>
+
+  <table border=1>
+    <tr>
+      <th>Item</th>
+      {{#each action_times this}}
+      <th>
+        <div>
+          {{#if time}}
+          <div class="span1">{{time}} months</div>
+          {{/if}}
+
+          {{#if miles}}
+          <div class="span1">{{miles}} miles</div>
+          {{/if}}
+
+          {{#if kilometers}}
+          <div class="span1">{{kilometers}} km.</div>
+          {{/if}}
+        </div>
+      </th>
+      {{/each}}
+    </tr>
+  {{#each items }}
+  <tr>
+    <td>{{item}}</td>
+    
+    {{#if interval}}
+
+    <td colspan="{{action_times_length ../..}}">{{action}} every
+      {{#if interval.time}}
+      {{interval.time}} months,
+      {{/if}}
+
+      {{#if interval.miles}}
+      {{interval.miles}} miles,
+      {{/if}}
+
+      {{#if interval.kilometers}}
+      or {{interval.kilometers}} kilometers
+      {{/if}}
+    </td>
+
+    {{else}}
+
+    {{#each action_times ../..}}
+    <td>
+      {{#if action_time_element_of ../schedule }}
+      {{../../action}}
+      {{/if}}
+    </td>
+    {{/each}}
+
+    {{/if}}
+
+  </tr>
+  {{/each}}
+
+  </table>
+</template>

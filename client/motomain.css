@@ -80,6 +80,10 @@ input.chosen {
     padding-bottom: 0;
 }
 
-.vehicle.selected {
+.schedule.selected {
     background-color: yellow;
+}
+
+body {
+    padding-top: 60px;
 }

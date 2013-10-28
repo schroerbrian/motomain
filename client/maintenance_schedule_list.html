@@ -1,0 +1,13 @@
+<template name="maintenance_schedule_list">
+  <div>
+    {{#each schedules}}
+    {{> maintenance_schedule_list_item }}
+    {{/each}}
+  </div>
+</template>
+
+<template name="maintenance_schedule_list_item">
+    <div class="schedule {{selected}}">
+      {{name}}
+    </div>
+</template>

@@ -15,3 +15,11 @@ Meteor.publish("vehicle_models", function () {
 Meteor.publish("vehicles", function () {
     return Vehicles.find();
 });
+
+Meteor.publish("maintenance_schedules", function () {
+    return MaintenanceSchedules.find();
+});
+
+Meteor.publish("maintenance_events", function () {
+    return MaintenanceEvents.find();
+});

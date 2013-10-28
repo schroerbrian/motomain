@@ -14,7 +14,7 @@ Template.vehicle_list.vehicles = function () {
 }
 
 Template.vehicle_list_item.selected = function () {
-    return Session.equals("selected", this._id) ? "selected" : '';
+    return Session.equals("selected", this._id) ? "active" : '';
 };
 
 Template.vehicle_list_item.events({

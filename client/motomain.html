@@ -8,47 +8,59 @@
 </body>
 
 <template name="page">
-  <div class="container">
-    <div class="row">
-      <div class="span1"> </div>
-
-      <div class="span10">
-        <div class="header row">
-          <div class="span5">
-            <h3 style="margin-bottom: 0px">Motorcycle Maintenance</h3>
-          </div>
-          <div class="span5">
-            <div style="float: right">
-
-              {{loginButtons align="right"}}
-
-            </div>
-          </div>
-        </div>
-
-        {{#if currentUser}}
-        <div class="row">
-          {{> vehicle_create}}
-        </div>
-        <div class="row">
-          {{> vehicle_list}}
-        </div>
-        {{else}}
-        <h4>Please sign in.</h4>
-        {{/if}}
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">MotoMain</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+            {{loginButtons align="right"}}
+          </p>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-
-      <div class="span1"> </div>
     </div>
   </div>
-</template>
 
-<template name="details">
-  {{#if vehicle}}
+  {{#if currentUser}}
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          {{> vehicle_list}}
+        </div>
+
+        {{> vehicle_create}}
+
+      </div>
+
+      <div class="span9">
+        <div class="row-fluid">
+          {{#if selected_vehicle }}
+          {{#with selected_vehicle }}
+          {{> vehicle_details}}
+          {{/with}}
+          {{else}}
+          <h4>No vehicle selected.</h4>
+          {{/if}}
+        </div> <!-- class="row-fluid" -->
+      </div> <!-- class="span9" -->
+    </div>
+  </div>
 
   {{else}}
-  <div class="span8">
-    <h3>{{name}}</h3>
-  </div>
+  <h4>Please sign in.</h4>
   {{/if}}
+
+  <hr>
+
 </template>

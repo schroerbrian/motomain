@@ -3,26 +3,22 @@
 Meteor.subscribe("vehicle_makes");
 Meteor.subscribe("vehicle_models");
 Meteor.subscribe("vehicles");
-Meteor.subscribe("users");
+Meteor.subscribe("users"); // Probs don't want this here...
+Meteor.subscribe("maintenance_schedules");
+Meteor.subscribe("maintenance_events");
 
-///////////////////////////////////////////////////////////////////////////////
-// Vehicle details sidebar
+Template.page.selected_vehicle = function () {
+    var selected_id = Session.get("selected");
+    if (!selected_id) {
+        return null;
+    }
 
-Template.details.vehicle = function () {
-  return Vehicles.findOne(Session.get("selected"));
-};
+    var selected = Vehicles.findOne(selected_id);
 
-Template.details.name = function () {
-    return this.vehicle().name;
-};
+    if (selected && (selected.owner_id != Meteor.userId())) {
+        Session.set("selected", null);
+        return null;
+    }
 
-Template.details.ownerName = function () {
-  var owner = Meteor.users.findOne(this.owner);
-  if (owner._id === Meteor.userId())
-    return "me";
-  return displayName(owner);
-};
-
-Template.details.canRemove = function () {
-  return this.owner === Meteor.userId();
-};
+    return selected;
+}

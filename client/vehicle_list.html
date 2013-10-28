@@ -1,22 +1,19 @@
 <template name="vehicle_list">
+  <ul class="nav nav-list">
+    <li class="nav-header">Vehicles</li>
+    {{#each vehicles}}
+    {{> vehicle_list_item}}
+    {{/each}}
+  </ul>
+
   {{#if vehicles.count}}
-
-  <h4>Your Vehicles</h4>
-
-  {{#each vehicles}}
-  {{> vehicle_list_item}}
-  {{/each}}
-
   {{else}}
-
-  <p>You have no vehicles</p>
-
+  <p>You have no vehicles.</p>
   {{/if}}
 </template>
 
 <template name="vehicle_list_item">
-  <div class="vehicle {{selected}}">
-    <span>{{name}}</span>
-    <span>{{year}}</span>
-  </div>
+  <li class="vehicle {{selected}}">
+    <a href="#">{{name}}</a>
+  </li>
 </template>
