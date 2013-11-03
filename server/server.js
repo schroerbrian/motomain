@@ -20,6 +20,6 @@ Meteor.publish("maintenance_schedules", function () {
     return MaintenanceSchedules.find();
 });
 
-Meteor.publish("maintenance_events", function () {
-    return MaintenanceEvents.find();
+Meteor.publish("vehicle_events", function () {
+    return VehicleEvents.find();
 });

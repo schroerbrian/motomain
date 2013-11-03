@@ -1,0 +1,15 @@
+<template name="vehicle_upcoming_events">
+
+  <div class="span9">
+    <h4>Upcoming Events</h4>
+
+    {{#each upcoming_events}}
+
+    <div>
+      {{item}} {{action}} {{when.time}} {{when.miles}}
+    </div>
+
+    {{/each}}
+  </div>
+
+</template>

@@ -1,6 +1,6 @@
 
 <template name="vehicle_details">
-  <div class="span9">
+  <div class="span9" id="vehicle_details">
     <h3>{{name}}</h3>
     <table class="vehicle_basic_info">
       <tr>
@@ -13,14 +13,18 @@
         <th>Mileage</th>
         <td>
           {{#if mileage}}
-          {{mileage}}
+          <span>{{mileage}} miles</span>
           {{else}}
-          unknown
+          <span>unknown</span>
           {{/if}}
+          <a id="mileage_update_link" href=#>Update</a>
         </td>
       </tr>
     </table>
+  </div>
+</template>
 
+<template name="vehicle_schedule">
     {{#if schedule }}
 
     {{#with schedule }}
@@ -37,5 +41,4 @@
 
     <button id="set_vehicle_schedule">Set Schedule</button>
     {{/if}}
-  </div>
 </template>

@@ -30,5 +30,11 @@ Template.vehicle_details.events({
             this.schedule_id = selected_schedule_id;
             Vehicles.update(this._id, this);
         }
+    },
+    'click a#mileage_update_link': function (e) {
+        e.preventDefault();
+        $("a#mileage_update_link").hide();
+        $("div#vehicle_details").append(Meteor.render(
+            Template.mileage_update_event_form));
     }
 });

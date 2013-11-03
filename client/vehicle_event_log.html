@@ -1,0 +1,11 @@
+<template name="vehicle_event_log">
+  <div class="span9">
+    <h4>Event Log</h4>
+
+    {{#each vehicle_events}}
+    <div>
+      <span>{{type}}</span>: <span>{{value}}</span>
+    </div>
+    {{/each}}
+  </div>
+</template>

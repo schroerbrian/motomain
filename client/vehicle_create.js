@@ -41,12 +41,14 @@ Template.vehicle_create.events({
         var year = $('#year_selector').val();
         var name = $('#vehicle_name').val();
 
-        Vehicles.insert({
+        var new_vehicle_id = Vehicles.insert({
             owner_id: Meteor.userId(),
             model_id: model_id,
             year: year,
             name: name
         });
+
+        Session.set("selected", new_vehicle_id);
     },
     'change #make_selector': function(e) {
         Session.set("new_make_id", $("#make_selector").val());

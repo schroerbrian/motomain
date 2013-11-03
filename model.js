@@ -42,10 +42,23 @@ Vehicles = new Meteor.Collection("vehicles");
  */
 MaintenanceSchedules = new Meteor.Collection("maintenace_schedules");
 
-
-MaintenanceEvents = new Meteor.Collection("maintenance_events");
-
-
+/**
+ * type:       String
+ *
+ * if (type == scheduled_event)
+ *     vehicle_id:  String
+ *     schedule_id: String
+ *     item:        String
+ *     action:      String
+ * else
+ *     synopsis:    String
+ *     description: String
+ *
+ * mileage:        Integer
+ * date_performed: Datetime
+ * date_logged:    Datetime
+ */
+VehicleEvents = new Meteor.Collection("vehicle_events");
 
 /*
 Meteor.methods({
