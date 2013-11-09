@@ -3,16 +3,26 @@
 
 function assert(exp) { if (!exp) alert("Assertion failure."); }
 
-//Template.vehicle_create.
-
 Template.vehicle_create.vehicle_makes = function () {
     return VehicleMakes.find({}, {sort: {name: 1}});
 };
 
 Template.vehicle_create.vehicle_models = function () {
     var new_make_id = Session.get("new_make_id");
-    return VehicleModels.find({make_id: new_make_id});
+    var models = VehicleModels.find({make_id: new_make_id}).fetch();
+
+    if (models.length > 0)
+        Session.set("new_model_id", models[0]._id);
+    else
+        Session.set("new_model_id", undefined);
+    return models;
 };
+
+Template.vehicle_create.created = function () {
+}
+
+Template.vehicle_create.rendered = function () {
+}
 
 Template.vehicle_create.vehicle_years = function () {
     var new_model_id = Session.get("new_model_id");
@@ -45,13 +55,15 @@ Template.vehicle_create.events({
             owner_id: Meteor.userId(),
             model_id: model_id,
             year: year,
-            name: name
+            name: name,
+            new_date: (new Date(year, 0)).getTime()
         });
 
         Session.set("selected", new_vehicle_id);
     },
     'change #make_selector': function(e) {
         Session.set("new_make_id", $("#make_selector").val());
+
         $("#model_selector").change();
         $("#year_selector").change();
     },

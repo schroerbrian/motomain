@@ -37,9 +37,8 @@
       <div class="span3">
         <div class="well sidebar-nav">
           {{> vehicle_list}}
+          {{> vehicle_create}}
         </div>
-
-        {{> vehicle_create}}
 
       </div>
 
@@ -53,6 +52,10 @@
 
           {{#if schedule_id}}
           {{> vehicle_upcoming_events}}
+          {{else}}
+          <div class="span9">
+            {{> maintenance_schedule_list}}
+          </div>
           {{/if}}
 
           {{/with}}

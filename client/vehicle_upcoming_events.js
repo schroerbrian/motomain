@@ -22,8 +22,10 @@ Template.vehicle_upcoming_events.upcoming_events = function() {
         return [];
     }
 
+    var vehicle_start_time = vehicle.new_date || Date.now();
+
     var upcoming = remaining_maintenance_actions(events.fetch(), schedule,
-                                                 Date.now());
+                                                 vehicle_start_time);
 
     var upcoming_simplified = _.map(upcoming, function (sched) {
         return {
@@ -35,6 +37,6 @@ Template.vehicle_upcoming_events.upcoming_events = function() {
 
     return _.filter(upcoming_simplified, function (upcoming) {
         return schedule_is_past_or_near(upcoming.when,
-                                        Date.now(), vehicle.mileage);
+                                        vehicle_start_time, vehicle.mileage);
     });
 };

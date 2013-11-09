@@ -1,6 +1,8 @@
 Template.maintenance_schedule_list.schedules = function() {
+    var vehicle = Vehicles.findOne(Session.get("selected"));
+
     var schedules = MaintenanceSchedules.find({
-        model_id: this.model_id}).fetch();
+        model_id: vehicle.model_id}).fetch();
 
     var matching_schedules = [];
 
@@ -8,7 +10,7 @@ Template.maintenance_schedule_list.schedules = function() {
         var schedule = schedules[ii];
 
         for (var year_index in schedule.years) {
-            if (this.year == schedule.years[year_index])
+            if (vehicle.year == schedule.years[year_index])
                 matching_schedules.push(schedule);
         }
     }
