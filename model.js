@@ -50,11 +50,13 @@ MaintenanceSchedules = new Meteor.Collection("maintenace_schedules");
  *     schedule_id: String
  *     item:        String
  *     action:      String
+ *     mileage (optional): Number
+ * else if (type == mileage)
+ *     value: Number
  * else
  *     synopsis:    String
  *     description: String
  *
- * mileage:        Integer
  * date_performed: Datetime
  * date_logged:    Datetime
  */

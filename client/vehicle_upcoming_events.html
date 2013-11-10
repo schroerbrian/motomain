@@ -5,11 +5,19 @@
 
     {{#each upcoming_events}}
 
-    <div>
-      {{item}} {{action}} {{when.time}} {{when.miles}}
-    </div>
+    {{> vehicle_upcoming_event_item}}
 
     {{/each}}
   </div>
 
+</template>
+
+<template name="vehicle_upcoming_event_item">
+    <div>
+      <input class="check" name="markdone" type="checkbox" />
+      <span>{{item}}</span>
+      <span>{{action}}</span>
+      <span>{{when.time}}</span>
+      <span>{{when.miles}}</span>
+    </div>
 </template>

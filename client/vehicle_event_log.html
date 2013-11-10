@@ -3,9 +3,11 @@
     <h4>Event Log</h4>
 
     {{#each vehicle_events}}
-    <div>
-      <span>{{type}}</span>: <span>{{value}}</span>
-    </div>
+    {{> vehicle_event}}
     {{/each}}
   </div>
+</template>
+
+<template name="vehicle_event">
+  {{{ get_html }}}
 </template>

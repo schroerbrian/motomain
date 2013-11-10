@@ -50,7 +50,7 @@ function _remaining_maintenance_actions(past_events, schedule,
             return;
         }
 
-        if (event.type === 'maintenance') {
+        if (event.type === 'scheduled_event') {
             if (event.mileage)
                 set_mileage(event.mileage);
 

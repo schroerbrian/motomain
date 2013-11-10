@@ -40,3 +40,26 @@ Template.vehicle_upcoming_events.upcoming_events = function() {
                                         vehicle_start_time, vehicle.mileage);
     });
 };
+
+Template.vehicle_upcoming_event_item.rendered = function() {
+    var self = this;
+
+    $(this.find("input.check")).click(function (e) {
+        var $this = $(this);
+
+        if ($this.is(':checked')) {
+
+            var event = {
+                type: "scheduled_event",
+                vehicle_id: Session.get("selected"),
+                item: self.data.item,
+                action: self.data.action,
+                // mileage?
+                date_performed: Date.now(),
+                date_logged: Date.now()
+            };
+
+            VehicleEvents.insert(event);
+        }
+    });
+};

@@ -18,6 +18,20 @@ Template.maintenance_schedule_list.schedules = function() {
     return matching_schedules;
 }
 
+Template.maintenance_schedule_list.events({
+    'click button#set_schedule_button': function(e) {
+        e.preventDefault();
+
+        if ((Session.get("selected") === undefined) ||
+            (Session.get("selected_schedule") === undefined))
+            return;
+
+        var vehicle = Vehicles.findOne(Session.get("selected"));
+        vehicle.schedule_id = Session.get("selected_schedule");
+        Vehicles.update(vehicle._id, vehicle);
+    }
+});
+
 
 Template.maintenance_schedule_list_item.selected = function () {
     return Session.equals("selected_schedule", this._id) ? "selected" : '';
