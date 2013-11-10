@@ -1,7 +1,7 @@
 
 function _time_elapsed_in_months_since(time) {
     var then = new Date(time);
-    var now  = new Date(Date.now());
+    var now  = new Date();
 
     var months = (now.getFullYear() - then.getFullYear()) * 12;
     months -= then.getMonth() + 1;
@@ -58,6 +58,7 @@ function _remaining_maintenance_actions(past_events, schedule,
 
             if (key in expected_event_hash) {
                 var expected_event = expected_event_hash[key];
+                // Eliminate any previously scheduled instances of this event.
                 expected_event.schedule = expected_event.schedule.filter(
                     function (event) {
                         return (event.time  > vehicle_age_in_months &&
@@ -69,12 +70,13 @@ function _remaining_maintenance_actions(past_events, schedule,
         }
     });
 
-    var result_hash = expected_event_hash;
-    _.each(interval_event_hash, function(value, key) {
-        result_hash[key] = value;
-    });
+    var result = {
+        expected_event_hash: expected_event_hash,
+        interval_event_hash: interval_event_hash,
+        last_interval_event_hash: last_interval_event
+    };
 
-    return result_hash;
+    return result;
 }
 
 remaining_maintenance_actions = _remaining_maintenance_actions;
