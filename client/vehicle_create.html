@@ -3,27 +3,33 @@
     <form>
       <div>
         <label>Make</label>
-        <select class="selectpicker" id="make_selector">
-          {{#each vehicle_makes}}
-          <option value="{{_id}}">{{name}}</option>
-          {{/each}}
-        </select>
+        <div class="dropdown-wrapper">
+          <select class="selectpicker" id="make_selector">
+            {{#each vehicle_makes}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
       <div>
         <label>Model</label>
-        <select class="selectpicker" id="model_selector">
-          {{#each vehicle_models}}
-          <option value="{{_id}}">{{name}}</option>
-          {{/each}}
-        </select>
+        <div class="dropdown-wrapper">
+          <select class="selectpicker" id="model_selector">
+            {{#each vehicle_models}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>  
       </div>
       <div>
         <label>Year</label>
-        <select class="selectpicker" id="year_selector">
-          {{#each vehicle_years}}
-          <option value="{{year}}">{{year}}</option>
-          {{/each}}
-        </select>
+        <div class="dropdown-wrapper">
+          <select class="selectpicker" id="year_selector">
+            {{#each vehicle_years}}
+            <option value="{{year}}">{{year}}</option>
+            {{/each}}
+          </select>
+        </div>  
       </div>
       <div>
         <label>Name</label>
