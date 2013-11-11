@@ -8,12 +8,23 @@ Template.vehicle_event_log.vehicle_events = function () {
 };
 
 Template.vehicle_event.get_html = function() {
+    var html_string;
     if (this.type === "scheduled_event")
-        return ("<div><span>" +
-                this.item +
-                "</span><span>" +
-                this.action +
-                "</span></div>");
+        html_string = ("<span>" +
+                       this.item +
+                       "</span><span>" +
+                       this.action +
+                       "</span>");
     else if (this.type === "mileage")
-        return ("<div><span>Mileage:</span><span>"+this.value+"</span></div>");
+        html_string = ("<span>Mileage:</span><span>" +
+                       this.value + "</span>");
+    return html_string;
 };
+
+Template.vehicle_event.iso8601date = function() {
+    return (new Date(this.date_performed)).toISOString();
+}
+
+Template.vehicle_event.rendered = function() {
+    $(this.find("abbr.timeago")).timeago();
+}

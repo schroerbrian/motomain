@@ -9,5 +9,8 @@
 </template>
 
 <template name="vehicle_event">
-  {{{ get_html }}}
+  <div class="row">
+    <div class="span4">{{{ get_html }}}</div>
+    <div class="span3"><abbr class="timeago" title={{iso8601date}}></abbr></div>
+  </div>
 </template>
