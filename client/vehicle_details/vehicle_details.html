@@ -19,22 +19,3 @@
     </table>
   </div>
 </template>
-
-<template name="vehicle_schedule">
-    {{#if schedule }}
-
-    {{#with schedule }}
-    {{> maintenance_schedule }}
-    {{/with}}
-
-    {{else}}
-
-    <h5>You haven't associated a maintenance schedule with this
-    vehicle yet!</h5>
-
-    <h5>Please select one, or create your own.</h5>
-    {{> maintenance_schedule_list }}    
-
-    <button id="set_vehicle_schedule">Set Schedule</button>
-    {{/if}}
-</template>
