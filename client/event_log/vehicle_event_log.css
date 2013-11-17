@@ -1,0 +1,15 @@
+h3.event-group-heading {
+    margin: 15px 0px 0px;
+    padding: 5px 8px;
+    font-size: 13px;
+    color: rgb(58, 80, 91);
+    text-shadow: 0px 1px white;
+    background: none repeat scroll 0% 0% rgb(230, 241, 246);
+    border: 1px solid rgb(197, 213, 221);
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.commit-group {
+    list-style-type: none;
+}
