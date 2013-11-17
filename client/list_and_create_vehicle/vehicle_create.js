@@ -56,6 +56,7 @@ Template.vehicle_create.events({
             model_id: model_id,
             year: year,
             name: name,
+            mileage: 0,
             new_date: (new Date(year, 0)).getTime()
         });
 
