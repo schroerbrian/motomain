@@ -46,25 +46,13 @@
       <div class="span9">
         <div class="row-fluid">
           {{#if selected_vehicle }}
-
-          {{#with selected_vehicle }}
-
-          {{> vehicle_details}}
-
-          {{#if schedule_id}}
-          {{> vehicle_upcoming_events}}
+            {{#with selected_vehicle }}
+              {{> vehicle_details}}
+              {{> vehicle_upcoming_events}}
+            {{/with}}
+            {{> vehicle_event_log}}
           {{else}}
-          <div class="span9">
-            {{> maintenance_schedule_list}}
-          </div>
-          {{/if}}
-
-          {{/with}}
-
-          {{> vehicle_event_log}}
-
-          {{else}}
-          <h4>No vehicle selected.</h4>
+            <h4>No vehicle selected.</h4>
           {{/if}}
         </div> <!-- class="row-fluid" -->
       </div> <!-- class="span9" -->
