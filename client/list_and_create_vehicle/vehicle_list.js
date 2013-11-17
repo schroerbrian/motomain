@@ -22,7 +22,9 @@ Template.vehicle_list.events({
    'click input#vl-add-moto': function (e) {
       e.preventDefault();
       $(".vl-add-moto-wrap").fadeOut();
-      $(".vehicle_create_dialog").fadeIn();
+      setTimeout(function() {
+        $(".vehicle_create_dialog").fadeIn();
+      },800);
     }
 
 });
@@ -34,9 +36,3 @@ Template.vehicle_list_item.events({
 
 });
 
-// 'click a#mileage_update_link': function (e) {
-//     e.preventDefault();
-//     $("a#mileage_update_link").hide();
-//     $("div#vehicle_details").append(Meteor.render(
-//         Template.mileage_update_event_form));
-// }
