@@ -1,0 +1,29 @@
+<template name="vehicle_event_log">
+  <div class="span9">
+    <h4>Event Log</h4>
+
+    {{#each vehicle_event_groups}}
+    
+    <h3 class="event-group-heading">{{day_string}}</h3>
+
+    <ol class="event-group">
+    {{#each group_events}}
+      <li class="event-group-item">{{> vehicle_event}}</li>
+    {{/each}}
+    </ol>
+
+    {{/each}}
+  </div>
+</template>
+
+<template name="vehicle_event">
+  <div class="row">
+    <div class="span4">{{{ get_html }}}</div>
+    <abbr class="timeago" title={{iso8601date}}></abbr>
+  </div>
+</template>
+
+<template name="scheduled_event">
+  <span class="maintenance-action">{{action}}</span>
+  <span class="maintenance-item">{{item}}</span>
+</template>
