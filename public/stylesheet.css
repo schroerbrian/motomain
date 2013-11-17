@@ -9,6 +9,16 @@ hr {
   border-top: solid 1px rgb(200,200,200);
 }
 
+
+/* ========== Display ========== */
+
+.hide {
+  display: none;
+}
+
+
+/* ======== Buttons and forms ========== */ 
+
 input[type="submit"]:hover {
   background-color: #3498db;
   color: #eee;
