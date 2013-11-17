@@ -50,6 +50,7 @@ Template.vehicle_create.events({
         var model_id = $('#model_selector').val();
         var year = $('#year_selector').val();
         var name = $('#vehicle_name').val();
+        var schedules = schedules_for_model_year(model_id, year);
 
         var new_vehicle_id = Vehicles.insert({
             owner_id: Meteor.userId(),
@@ -57,6 +58,7 @@ Template.vehicle_create.events({
             year: year,
             name: name,
             mileage: 0,
+            schedule_id: schedules.length ? schedules[0]._id : null,
             new_date: (new Date(year, 0)).getTime()
         });
 
