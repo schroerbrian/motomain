@@ -2,16 +2,15 @@
   <ul class="nav nav-list">
     <li class="nav-header">Vehicles</li>
     {{#each vehicles}}
-    {{> vehicle_list_item}}
+      {{> vehicle_list_item}}
     {{/each}}
   </ul>
 
-  {{#if vehicles.count}}
-  {{else}}
-  <p>You have no vehicles.</p>
-  {{/if}}
   <div class="form-actions vl-add-moto-wrap">
     <input type="submit" value="+ add bike" id="vl-add-moto" />
+  </div>
+  <div class="vehicle_create_dialog hide">
+    {{> vehicle_create}}
   </div>
 </template>
 
