@@ -12,13 +12,6 @@ function is_interval_event_due(interval_event, last_event,
             last_event.date_performed);
     }
 
-    console.log(vehicle_mileage);
-    console.log(last_event_mileage);
-    console.log(last_event_time);
-    console.log(interval_event);
-    console.log(last_event);
-    console.log("========");
-
     if (interval_event.interval.miles !== undefined) {
         if ((vehicle_mileage - last_event_mileage) >=
             interval_event.interval.miles) {

@@ -1,0 +1,41 @@
+<template name="vehicle_create">
+  <form>
+    <div>
+      <label>Make</label>
+      <div class="dropdown-wrapper">
+        <select class="selectpicker" id="make_selector">
+          {{#each vehicle_makes}}
+          <option value="{{_id}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div>
+      <label>Model</label>
+      <div class="dropdown-wrapper">
+        <select class="selectpicker" id="model_selector">
+          {{#each vehicle_models}}
+          <option value="{{_id}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>  
+    </div>
+    <div>
+      <label>Year</label>
+      <div class="dropdown-wrapper">
+        <select class="selectpicker" id="year_selector">
+          {{#each vehicle_years}}
+          <option value="{{year}}">{{year}}</option>
+          {{/each}}
+        </select>
+      </div>  
+    </div>
+    <div>
+      <label>Name</label>
+      <input type="text" id="vehicle_name">
+    </div>
+    <div class="form-actions">
+      <input type="submit" value="Create" />
+    </div>
+  </form>
+</template>

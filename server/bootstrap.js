@@ -1,21 +1,11 @@
 
 function addInitialMakesModels() {
     var su_id = VehicleMakes.insert({name: 'Suzuki'});
-    var ho_id = VehicleMakes.insert({name: 'Honda'});
-    var ya_id = VehicleMakes.insert({name: 'Yamaha'});
-    var du_id = VehicleMakes.insert({name: 'Ducati'});
     var tr_id = VehicleMakes.insert({name: 'Triumph'});
-    var hd_id = VehicleMakes.insert({name: 'Harley-Davidson'});
 
     VehicleModels.insert({
         make_id: su_id,
         name: 'DL650A',
-        years: [[2012, 2013]]
-    });
-
-    VehicleModels.insert({
-        make_id: su_id,
-        name: 'TestModel',
         years: [[2012, 2013]]
     });
 }

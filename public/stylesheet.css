@@ -1,3 +1,6 @@
+
+/* ================= General styles ===================== */
+
 body {
 
 }
@@ -6,59 +9,25 @@ hr {
   border-top: solid 1px rgb(200,200,200);
 }
 
-.nav-header {
-display: block;
-padding: 3px 0px 6px;
-font-size: 24px;
-font-weight: bold;
-line-height: 20px;
-color: #333;
-text-shadow: none;
-text-transform: uppercase;
+/* ========== Table stuff ========== */
+
+tbody {
+  text-align: left;
 }
 
-.nav-list .vehicle a {
-  font-size: 18px;
-  padding-left: 0px;
+abbr[title] {
+  cursor: auto;
+  border-bottom: none;
 }
 
-.active a {
-  font-style: italic;
+/* ========== Display ========== */
+
+.hide {
+  display: none;
 }
 
-.vehicle_create_dialog {
-  padding-top: 10px;
-}
 
-.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
-  color: #333;
-  background-color: inherit;
-  text-shadow: none;
-}
-
-.well, .form-actions {
-  background-color: inherit;
-}
-
-.form-actions {
-  padding: 19px 0 20px;
-  border-top: solid 1px rgb(200,200,200);
-}
-
-.well {
-  color: #777;
-  padding: 0 20px 0 0;
-  border: 0;
-  border-right: solid 1px rgb(200,200,200);
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
-.nav-list > li > a {
-  padding-left: 3px;
-}
+/* ======== Buttons and forms ========== */ 
 
 input[type="submit"]:hover {
   background-color: #3498db;
@@ -105,15 +74,6 @@ input[type="color"]:focus, .uneditable-input:focus
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(50, 50,50, 0.8);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(50, 50,50, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(50, 50,50, 0.8)
-}
-
-.dropdown-wrapper {
-  position: relative;
-  width: 228px;
-  height: 28px;
-  overflow: visible;
-  background: url('/new-arrow.png') no-repeat right;
-  margin: 0 0 15px
 }
 
 select {
