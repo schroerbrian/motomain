@@ -19,6 +19,11 @@ Template.vehicle_list_item.selected = function () {
 
 Template.vehicle_list.events({
    
+   'change #vehicle_selector': function(e) {
+       var currentVehicle = $("#vehicle_selector").val();
+       Session.set("selected", currentVehicle);
+   },
+
    'click input#vl-add-moto': function (e) {
       e.preventDefault();
       $(".vl-add-moto-wrap").fadeOut();

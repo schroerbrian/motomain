@@ -38,6 +38,11 @@
       <div class="span3">
         <div class="well sidebar-nav">
           {{> vehicle_list}}
+            {{#if selected_vehicle }}
+              {{#with selected_vehicle }}
+                {{> vehicle_details}}
+              {{/with}}
+            {{/if}}
         </div>
 
       </div>
@@ -46,7 +51,6 @@
         <div class="row-fluid">
           {{#if selected_vehicle }}
             {{#with selected_vehicle }}
-              {{> vehicle_details}}
               {{> vehicle_upcoming_events}}
             {{/with}}
             {{> vehicle_event_log}}
