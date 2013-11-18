@@ -9,6 +9,16 @@ hr {
   border-top: solid 1px rgb(200,200,200);
 }
 
+/* ========== Table stuff ========== */
+
+tbody {
+  text-align: left;
+}
+
+abbr[title] {
+  cursor: auto;
+  border-bottom: none;
+}
 
 /* ========== Display ========== */
 
