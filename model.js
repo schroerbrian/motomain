@@ -57,8 +57,8 @@ MaintenanceSchedules = new Meteor.Collection("maintenace_schedules");
  *     synopsis:    String
  *     description: String
  *
- * date_performed: Datetime
- * date_logged:    Datetime
+ * date_performed: Number (seconds since epoch)
+ * date_logged:    Number (seconds since epoch)
  */
 VehicleEvents = new Meteor.Collection("vehicle_events");
 
