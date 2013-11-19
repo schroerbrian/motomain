@@ -1,29 +1,25 @@
 <template name="vehicle_list">
-  
-  <span class="nav-header">Vehicles</span>
-    
-    <div class="dropdown-wrapper">
-      <select class="selectpicker" id="vehicle_selector">
-        {{#each vehicles}}
-          <option value="{{_id}}">{{> vehicle_list_item}}</option>
-        {{/each}}
-      </select>
-    </div>  
-
-    <div class="form-actions vl-add-moto-wrap">
-      <input type="submit" value="+ add bike" id="vl-add-moto" />
-    </div>
-    
-    <div class="vehicle_create_dialog hide">
-      {{> vehicle_create}}
-    </div>
+          
+  <div class="vehicle_create_dialog hide">
+    {{> vehicle_create}}
+  </div>
 
 </template>
 
 <template name="vehicle_list_item">
-  <li class="vehicle {{selected}}">
+  <li class="vehicle {{selected}} vl-selected-moto">
     <a href="#">{{name}}</a>
   </li>
 </template>
 
+<template name="vehicle_list_menu">
+  
+  <ul class="nav nav-list bike-list">
+    {{#each vehicles}}
+      {{> vehicle_list_item}}
+    {{/each}}
+    <li class="vehicle"><a href="#" class="vl-add-moto">Add a bike, yo</a></li>
+  </ul>
+
+</template>
 
