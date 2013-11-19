@@ -1,4 +1,43 @@
+/* ========== Vehicle list in header ========== */
 
+.container-moto:after {
+  clear: none;
+}
+
+.nav-in-moto:after {
+  clear: none;
+}
+
+.navbar .nav .vehicle {
+  float: none;
+}
+
+.navbar .nav .bike-list{
+  position:absolute;
+  left: -9999px;
+  background: transparent;
+}
+
+.nav ul a{
+    white-space:nowrap; 
+}
+
+.navbar .nav li:hover ul {
+  left: 0;
+}
+
+.navbar .nav li:hover a { 
+    background:#0088cc;
+    text-decoration:underline;
+}
+
+.navbar .nav li:hover ul a {
+  text-decoration:none;
+}
+
+.navbar .nav li a:hover {
+  background: black;
+}
 
 /* ========== Bootstrap overrides ========== */
 

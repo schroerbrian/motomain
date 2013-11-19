@@ -17,16 +17,20 @@ Template.vehicle_list_item.selected = function () {
     return Session.equals("selected", this._id) ? "active" : '';
 };
 
-Template.vehicle_list.events({
+Template.vehicle_list_menu.vehicles = function () {
+    return Vehicles.find({owner_id: Meteor.userId()});
+}
+
+Template.vehicle_list_menu.events({
    
    'change #vehicle_selector': function(e) {
        var currentVehicle = $("#vehicle_selector").val();
        Session.set("selected", currentVehicle);
    },
 
-   'click input#vl-add-moto': function (e) {
+   'click .vl-add-moto': function(e) {
       e.preventDefault();
-      $(".vl-add-moto-wrap").fadeOut();
+      $("#vehicle_details").fadeOut();
       setTimeout(function() {
         $(".vehicle_create_dialog").fadeIn();
       },800);
