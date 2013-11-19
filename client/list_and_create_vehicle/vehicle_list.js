@@ -28,9 +28,8 @@ Template.vehicle_list_menu.events({
        Session.set("selected", currentVehicle);
    },
 
-   'click .vl-add-moto': function (e) {
+   'click .vl-add-moto': function(e) {
       e.preventDefault();
-      console.log("hiy");
       $("#vehicle_details").fadeOut();
       setTimeout(function() {
         $(".vehicle_create_dialog").fadeIn();

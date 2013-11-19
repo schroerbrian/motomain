@@ -22,3 +22,15 @@ Template.page.selected_vehicle = function () {
 
     return selected;
 }
+
+Template.page.events({
+    
+    'click .vl-add-moto': function(e) {
+       e.preventDefault();
+       $("#vehicle_details").fadeOut();
+       setTimeout(function() {
+         $(".vehicle_create_dialog").fadeIn();
+       },800);
+     }
+
+});
